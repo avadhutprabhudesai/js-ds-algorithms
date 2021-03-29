@@ -11,11 +11,7 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['@babel', 'unicorn'],
-  extends: [
-    'eslint:recommended',
-    'plugin:prettier/recommended',
-    'plugin:unicorn/recommended',
-  ],
+  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
   rules: {
     '@babel/new-cap': 'error',
     '@babel/no-invalid-this': 'error',
