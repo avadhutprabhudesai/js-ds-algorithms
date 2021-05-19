@@ -75,6 +75,19 @@ export default class LinkedList {
     this.length++;
   }
   delete(position) {
+    // if length is 1
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+      this.length = 0;
+      return;
+    }
+    // if position is 0
+    if (position === 0) {
+      this.head = this.head.next;
+      this.length--;
+      return;
+    }
     let currentIndex = 0,
       prevIndex = -1,
       nodeToDelete = this.head;
@@ -88,11 +101,9 @@ export default class LinkedList {
     this.length--;
   }
   reverse() {
-    // 1 2 3 4 5
     let current = this.head,
       prev = null,
       temp = null;
-    // this.tail = this.head;
 
     while (current) {
       temp = current.next;
