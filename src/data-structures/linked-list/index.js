@@ -87,6 +87,23 @@ export default class LinkedList {
     prevNode.next = nodeToDelete.next;
     this.length--;
   }
+  reverse() {
+    // 1 2 3 4 5
+    let current = this.head,
+      prev = null,
+      temp = null;
+    // this.tail = this.head;
+
+    while (current) {
+      temp = current.next;
+
+      current.next = prev;
+      prev = current;
+      current = temp;
+      this.head = prev;
+    }
+  }
+
   toString() {
     let values = [];
     let currentNode = this.head;
