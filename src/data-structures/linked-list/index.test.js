@@ -50,7 +50,14 @@ describe('Testing Linked List', () => {
     expect(myLinkedList.length).toEqual(4);
     myLinkedList.delete(0);
     expect(myLinkedList.length).toEqual(3);
-    expect(myLinkedList.get(1)).toEqual(20);
+    expect(myLinkedList.get(0)).toEqual(20);
+  });
+  it('should be able to delete the only item in the linked list', () => {
+    const myLinkedList = new LinkedList(0);
+    expect(myLinkedList.length).toEqual(1);
+    myLinkedList.delete(0);
+    expect(myLinkedList.length).toEqual(0);
+    expect(myLinkedList.head).toBeNull();
   });
   it('should be able to reverse a LinkedList with only 1 item', () => {
     const myLinkedList = new LinkedList(1);
